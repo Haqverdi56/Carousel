@@ -2,10 +2,7 @@ import React,{useRef} from 'react'
 import '../components/slide.scss'
 import whalecard from '../assets/images/whalecard.png'
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, {Autoplay, Navigation, Pagination } from "swiper";
-// import "swiper/css/navigation";
-// import "swiper/css";
-import Slider from 'react-slick'
+import SwiperCore, {Autoplay, Pagination } from "swiper";
 import CustomerSlider from '../components/CustomerSlider'
 import TalentContainer from './TalentContainer';
 
@@ -17,8 +14,8 @@ const Slide = () => {
   return (
     <>
     <div
-    // onMouseEnter={() => swiperRef.current.swiper.autoplay.stop()}
-    // onMouseLeave={() => swiperRef.current.swiper.autoplay.start()}
+    onMouseEnter={() => swiperRef.current.swiper.autoplay.stop()}
+    onMouseLeave={() => swiperRef.current.swiper.autoplay.start()}
     >
       <div className="hero-div">
         <div className="directions">
@@ -37,11 +34,10 @@ const Slide = () => {
             <Swiper
             ref={swiperRef}
             direction='vertical'
-            // autoplay={{
-            //     delay: 6000,
-            // }}
+            autoplay={{
+                delay: 6000,
+            }}
             navigation={true}
-            // modules={[Navigation]}
             className="mySwiper"
             >
                 <SwiperSlide>
